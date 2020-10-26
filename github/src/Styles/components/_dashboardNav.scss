@@ -1,0 +1,11 @@
+.dashboard-nav {
+  display: flex;
+  width: 50%;
+  margin: 5rem auto;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin: 0 3rem;
+  }
+}

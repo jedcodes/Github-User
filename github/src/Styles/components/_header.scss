@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  &__form {
+    flex: 1;
+
+    &-input {
+      width: 75%;
+      padding: 1rem;
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__info {
+    flex: 0.2;
+  }
+}

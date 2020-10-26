@@ -1,0 +1,32 @@
+.row {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border: none;
+    border-radius: 50%;
+    padding: 0.7rem;
+
+    &--repos {
+      background-color: rgba(218, 74, 145, 0.2);
+      color: rgb(218, 74, 145);
+    }
+
+    &--following {
+      background-color: rgba(93, 85, 250, 0.2);
+      color: rgb(93, 85, 250);
+    }
+
+    &--gists {
+      background-color: rgba(240, 181, 40, 0.2);
+      color: rgb(240, 181, 40);
+    }
+
+    &--followers {
+      background-color: rgba($color: $primary-color, $alpha: 0.2);
+      color: $primary-color;
+    }
+  }
+}

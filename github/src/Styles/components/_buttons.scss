@@ -5,6 +5,7 @@
   border-color: transparent;
   cursor: pointer;
   font-size: 1.8rem;
+  transition: 500ms;
 
   &--fill {
     background-color: $primary-color;
@@ -15,5 +16,15 @@
       color: $primary-color;
       border-color: $primary-color;
     }
+  }
+}
+
+.middelbody__button {
+  border: 1px solid $primary-color;
+  border-radius: 30px;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $color-white;
   }
 }

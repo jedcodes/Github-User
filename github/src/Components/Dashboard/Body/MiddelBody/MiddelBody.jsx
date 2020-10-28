@@ -3,7 +3,6 @@ import { Avatar } from "@material-ui/core";
 import { BsBuilding, BsLink45Deg } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 
-import Buttons from "../../../Comps/Buttons";
 import Followers from "./Followers";
 
 const MiddelBody = () => {
@@ -19,7 +18,7 @@ const MiddelBody = () => {
               <h2 className="middelbody__left-user--name">@jedcodes</h2>
             </div>
           </div>
-          <Buttons fill>Follow</Buttons>
+          <button className="buttons middelbody__button">Follow</button>
         </div>
         <div className="middelbody__left-info">
           <h2 className="middelbody__title">Udemy Coder</h2>
@@ -33,7 +32,7 @@ const MiddelBody = () => {
             </li>
             <li>
               <BsLink45Deg className="middelbody__left-icon" />
-              jedcodes.com
+              <span className="middelbody__left-lastItem">jedcodes.com</span>
             </li>
           </ul>
         </div>

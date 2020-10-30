@@ -3,3 +3,10 @@
   margin: 0 auto;
   border: 2px solid;
 }
+
+.app__auth {
+  height: 100vh;
+  background-color: #323232;
+  display: grid;
+  place-items: center;
+}

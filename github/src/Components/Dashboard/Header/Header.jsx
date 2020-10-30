@@ -1,10 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BsSearch } from "react-icons/bs";
+import axios from "axios";
 
 import Buttons from "../../Comps/Buttons";
+import { AppContext } from "../../../Context/AppContext";
+import { ACTIONS } from "../../../Context/appReducer";
 
 const Header = () => {
   const [input, setInput] = useState("");
+  const { dispatch } = useContext(AppContext);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data } = await axios.get(
+        "https://api.github.com/users/ZhangMYihua"
+      );
+
+      try {
+        dispatch({
+          type: ACTIONS.GET_GITHUB_USER,
+          payload: data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchUser();
+  }, [dispatch]);
 
   return (
     <div className="header">

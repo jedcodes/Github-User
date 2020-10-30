@@ -1,8 +1,13 @@
 import React from "react";
 
-const Buttons = ({ children, fill }) => {
+const Buttons = ({ children, fill, handleClick }) => {
   return (
-    <button className={`buttons ${fill && "buttons--fill"}`}>{children}</button>
+    <button
+      onClick={handleClick}
+      className={`buttons ${fill && "buttons--fill"}`}
+    >
+      {children}
+    </button>
   );
 };
 

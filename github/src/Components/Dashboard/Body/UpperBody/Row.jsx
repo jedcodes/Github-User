@@ -3,7 +3,7 @@ import { BsPeople, BsBraces } from "react-icons/bs";
 import { HiOutlineUserAdd } from "react-icons/hi";
 import { BiBookAlt } from "react-icons/bi";
 
-const Row = ({ title }) => {
+const Row = ({ title, userInfo }) => {
   let icon = null;
 
   switch (title) {
@@ -27,7 +27,7 @@ const Row = ({ title }) => {
     <div className="row">
       {icon}
       <div className="row__info">
-        <h1>192</h1>
+        <h1>{userInfo}</h1>
         <h1 className="row__info-title">{title}</h1>
       </div>
     </div>

@@ -1,0 +1,12 @@
+.forms {
+  width: 100%;
+  &:not(:last-child) {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}

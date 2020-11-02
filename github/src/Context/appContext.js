@@ -4,7 +4,6 @@ import { appReducer } from "./appReducer";
 export const AppContext = createContext();
 
 const initialState = {
-  user: null,
   githubUser: null,
 };
 

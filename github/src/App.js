@@ -2,18 +2,17 @@ import React, { useContext, useEffect } from "react";
 import Auth from "./Pages/Auth/Auth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import { auth } from "./firebase/firebase";
-import { AppContext } from "./Context/AppContext";
-import { ACTIONS } from "./Context/appReducer";
+import { userContext } from "./Context/userContext";
 
 const App = () => {
-  const { state, dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(userContext);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const { displayName, photoURL } = user;
         dispatch({
-          type: ACTIONS.SET_CURRENT_USER,
+          type: "SET_CURRENT_USER",
           payload: { displayName, photoURL },
         });
       }
@@ -23,8 +22,8 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={state.user ? "app" : "app__auth"}>
-      {state.user ? <Dashboard /> : <Auth />}
+    <div className={state.currentUser ? "app" : "app__auth"}>
+      {state.currentUser ? <Dashboard /> : <Auth />}
     </div>
   );
 };

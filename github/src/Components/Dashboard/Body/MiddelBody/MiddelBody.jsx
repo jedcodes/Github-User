@@ -13,19 +13,9 @@ const MiddelBody = () => {
     state: { githubUser },
   } = useContext(AppContext);
 
-  const {
-    avatar_url,
-    bio,
-    blog,
-    company,
-    location,
-    name,
-    followers_url,
-  } = githubUser;
-
   useEffect(() => {
     const fetchFollowers = async () => {
-      const { data } = await axios.get(followers_url);
+      const { data } = await axios.get(githubUser.followers_url);
 
       try {
         setFollowers(data);
@@ -35,7 +25,7 @@ const MiddelBody = () => {
       }
     };
     fetchFollowers();
-  }, [followers_url]);
+  }, [githubUser.followers_url]);
 
   return (
     <div className="middelbody">
@@ -43,28 +33,31 @@ const MiddelBody = () => {
         <h2 className="middelbody__title">User</h2>
         <div className="middelbody__left-header">
           <div className="middelbody__left-user">
-            <Avatar src={avatar_url} />
+            <Avatar src={githubUser.avatar_url} />
             <div className="middelbody__left-user-title">
-              <h2>{name}</h2>
+              <h2>{githubUser.name}</h2>
               <h2 className="middelbody__left-user--name">@jedcodes</h2>
             </div>
           </div>
           <button className="buttons middelbody__button">Follow</button>
         </div>
         <div className="middelbody__left-info">
-          <h2 className="middelbody__title"> {bio} </h2>
+          <h2 className="middelbody__title"> {githubUser.bio} </h2>
           <ul className="middelbody__left-list">
             <li>
               <BsBuilding className="middelbody__left-icon" />{" "}
-              {company ? company : "N/A"}{" "}
+              {githubUser.company ? githubUser.company : "N/A"}{" "}
             </li>
             <li>
               <GoLocation className="middelbody__left-icon" />
-              {location}
+              {githubUser.location}
             </li>
             <li>
               <BsLink45Deg className="middelbody__left-icon" />
-              <span className="middelbody__left-lastItem"> {blog} </span>
+              <span className="middelbody__left-lastItem">
+                {" "}
+                {githubUser.blog}{" "}
+              </span>
             </li>
           </ul>
         </div>
